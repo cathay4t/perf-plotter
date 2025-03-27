@@ -1,6 +1,6 @@
 [package]
 name = "perf-plotter"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 description = "Library for generate performance chart"
 license = "Apache-2.0"
