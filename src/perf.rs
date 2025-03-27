@@ -55,7 +55,7 @@ fn gen_png(
         .x_label_area_size(30)
         .y_label_area_size(30)
         .build_cartesian_2d(
-            0.0f32..(data.len() as f32),
+            1.0f32..(data.len() as f32 + 1.0f32),
             min_dur.as_secs_f32()..max_dur.as_secs_f32(),
         )
         .map_err(|e| PerfPlotterError::new(e.to_string()))?;
@@ -73,7 +73,7 @@ fn gen_png(
             LineSeries::new(
                 data.iter()
                     .enumerate()
-                    .map(|(i, d)| (i as f32, d.as_secs_f32())),
+                    .map(|(i, d)| (i as f32 + 1.0f32, d.as_secs_f32())),
                 RED,
             )
             .point_size(2),
